@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-alja <yel-alja@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/30 10:24:21 by yel-alja          #+#    #+#             */
-/*   Updated: 2024/12/03 17:59:33 by yel-alja         ###   ########.fr       */
+/*   Created: 2024/12/03 19:49:05 by yel-alja          #+#    #+#             */
+/*   Updated: 2024/12/03 19:50:24 by yel-alja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

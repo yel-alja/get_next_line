@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-alja <yel-alja@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/30 09:46:13 by yel-alja          #+#    #+#             */
-/*   Updated: 2024/12/03 18:15:41 by yel-alja         ###   ########.fr       */
+/*   Created: 2024/12/03 19:47:40 by yel-alja          #+#    #+#             */
+/*   Updated: 2024/12/04 10:26:35 by yel-alja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_substr(char *s, ssize_t end)
 {
@@ -73,7 +73,7 @@ char	*read_fun(char *buffer, char *buff, int fd)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer[max_fd];
 	char		*buff;
 	char		*line;
 	char		*tmp;
@@ -83,17 +83,17 @@ char	*get_next_line(int fd)
 	buff = malloc(BUFFER_SIZE + 1);
 	if (!buff)
 		return (NULL);
-	buffer = read_fun(buffer, buff, fd);
-	line = find_line(buffer);
-	if (!line && buffer && *buffer != '\0')
+	buffer[fd] = read_fun(buffer[fd], buff, fd);
+	line = find_line(buffer[fd]);
+	if (!line && buffer[fd] && *buffer[fd] != '\0')
 	{
-		line = ft_strdup(buffer);
-		free(buffer);
-		buffer = NULL;
+		line = ft_strdup(buffer[fd]);
+		free(buffer[fd]);
+		buffer[fd] = NULL;
 		return (line);
 	}
-	tmp = ft_strdup(ft_strchr(buffer, '\n'));
-	free(buffer);
-	buffer = ft_strdup(tmp);
+	tmp = ft_strdup(ft_strchr(buffer[fd], '\n'));
+	free(buffer[fd]);
+	buffer[fd] = ft_strdup(tmp);
 	return (free(tmp), line);
 }

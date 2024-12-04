@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-alja <yel-alja@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/30 09:53:32 by yel-alja          #+#    #+#             */
-/*   Updated: 2024/12/03 19:56:31 by yel-alja         ###   ########.fr       */
+/*   Created: 2024/12/03 19:53:03 by yel-alja          #+#    #+#             */
+/*   Updated: 2024/12/04 10:27:00 by yel-alja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
 
-
+# ifndef max_fd
+#  define max_fd 1024
+# endif
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
 # endif
