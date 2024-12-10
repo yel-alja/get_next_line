@@ -18,9 +18,6 @@
 # include <string.h>
 # include <unistd.h>
 
-# ifndef max_fd
-#  define max_fd 1024
-# endif
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
 # endif
