@@ -73,12 +73,12 @@ char	*read_fun(char *buffer, char *buff, int fd)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer[max_fd];
+	static char	*buffer[1024];
 	char		*buff;
 	char		*line;
 	char		*tmp;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd < 1024)
 		return (NULL);
 	buff = malloc(BUFFER_SIZE + 1);
 	if (!buff)
